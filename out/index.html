@@ -8,51 +8,73 @@
     <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/flexboxgrid/6.3.1/flexboxgrid.min.css" integrity="sha512-YHuwZabI2zi0k7c9vtg8dK/63QB0hLvD4thw44dFo/TfBFVVQOqEG9WpviaEpbyvgOIYLXF1n7xDUfU3GDs0sw==" crossorigin="anonymous" referrerpolicy="no-referrer" /> -->
     <link rel="stylesheet" href="/assets/css/styles.css">
     <link rel="icon" type="image/x-icon" href="/assets/images/favicon.ico">
-    <title>Home</title>
+    <title>Zen Dao Games</title>
   </head>
-  <body>
+  <body class="has-navbar-fixed-top">
 
-    <nav>
-      <ul>
-        <li><strong>Brand</strong></li>
-      </ul>
-      <ul>
-        <li><a href="#">Home</a></li>
-        <li><a href="#">Blog</a></li>
-        <li><a href="#">About</a></li>
-      </ul>
+    <nav class="navbar is-fixed-top" role="navigation" aria-label="main navigation">
+      <div class="navbar-brand">
+        <a class="navbar-item" href="/">
+          <img src="/assets/images/logo 400x400.png" width="28" height="28">
+        </a>
+
+        <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false" data-target="navbarBasicExample">
+          <span aria-hidden="true"></span>
+          <span aria-hidden="true"></span>
+          <span aria-hidden="true"></span>
+        </a>
+      </div>
+
+      <div class="navbar-menu">
+        <div class="navbar-start">
+        </div>
+
+        <div class="navbar-end">
+          <a class="navbar-item" href="/">
+            Home
+          </a>
+
+          <a class="navbar-item" href="/about.html">
+            About
+          </a>
+
+          <a class="navbar-item" href="/blog.html">
+            Blog
+          </a>
+
+          <a class="navbar-item" href="https://twitter.com/ZenDaoGames" target="_blank" rel="noopener noreferrer">
+            <span class="icon">
+              <ion-icon name="logo-twitter"></ion-icon>
+            </span>
+          </a>
+
+          <a class="navbar-item" href="https://www.facebook.com/ZenDaoGames" target="_blank" rel="noopener noreferrer">
+            <ion-icon name="logo-facebook"></ion-icon>
+          </a>
+
+          <a class="navbar-item" href="https://mastodon.gamedev.place/@zendaogames" target="_blank" rel="noopener noreferrer">
+            <ion-icon name="logo-mastodon"></ion-icon>
+          </a>
+
+          <a class="navbar-item" href="mailto:zendaogames@gmail.com" target="_blank" rel="noopener noreferrer">
+            <ion-icon name="mail-outline"></ion-icon>
+          </a>
+
+          <a class="navbar-item" href="https://feeds.feedburner.com/ZenDaoGames-Blog" target="_blank" rel="noopener noreferrer">
+            <ion-icon name="logo-rss"></ion-icon>
+          </a>
+
+        </div>
+      </div>
     </nav>
 
     <main>
-      <!-- <div class="flex-container">
-  <div>
-    <img src="/assets/pages/index/Capture.png" alt="The Lost Wanderer screenshot" />
-  </div>
-  <div>
-    <img src="/assets/pages/index/Capture2.png" alt="The Lost Wanderer screenshot" />
-  </div>
-  <div>
-    <img src="/assets/pages/index/Capture3.png" alt="The Lost Wanderer screenshot" />
+      <div class="columns is-gapless is-multiline">
+
+  <div class="column is-full has-text-centered" style="background-image: url('/assets/pages/index/banner background 2048x1152@0.25x.png'); background-size: cover;">
+    <img src="/assets/pages/index/logo - name only - blue - trans - 1080p.png" alt="The Lost Wanderer logo" style="width: 50%;" />
   </div>
 
-</div> -->
-
-<section class="section">
-    <div class="container">
-      <h1 class="title">
-        Hello World
-      </h1>
-      <p class="subtitle">
-        My first website with <strong>Bulma</strong>!
-      </p>
-    </div>
-</section>
-
-
-  
-  
-
-<div class="columns is-gapless is-multiline" style="background-color: #210044">
   <div class="column is-full">
     <img src="/assets/pages/index/Background 2160x1080.png" alt="The Lost Wanderer logo"/>
   </div>
@@ -65,14 +87,10 @@
     <p class="has-text-light is-size-5 has-text-centered m-6">The Lost Wanderer is a dramatic, atmospheric, exploration game where you must learn the fate of a strange world before escaping it.</p>
 
     <div class="has-text-centered mb-5">
-      <a href="https://zendaogames.itch.io/the-lost-wanderer" class="button is-rounded is-dark is-medium">PLAY FOR FREE</a>
+      <a href="https://zendaogames.itch.io/the-lost-wanderer" target="_blank" rel="noopener noreferrer" class="button is-rounded is-dark is-medium">PLAY FOR FREE</a>
     </div>
   </div>
 
-<!--   <div class="column is-full">
-    <a href="https://zendaogames.itch.io/the-lost-wanderer" class="button is-rounded is-dark is-medium">PLAY FOR FREE</a>
-  </div> -->
-
   <div class="column is-one-third">
     <img src="/assets/pages/index/Capture.png" alt="The Lost Wanderer screenshot" />
   </div>
@@ -84,50 +102,20 @@
   <div class="column is-one-third">
     <img src="/assets/pages/index/Capture3.png" alt="The Lost Wanderer screenshot" />
   </div>
-  
 </div>
 
-<!-- <div class="container"> -->
 
-<!--   <div class="box">
-    <img src="/assets/pages/index/Capture2.png" alt="The Lost Wanderer screenshot" />
-  </div>
-  <div class="box">
-    <img src="/assets/pages/index/Capture3.png" alt="The Lost Wanderer screenshot" />
-  </div> -->
-<!--     <div class="col-xs-12
-                col-sm-8
-                col-md-6
-                col-lg-4">
-        <div class="box">Responsive</div>
-    </div> -->
-</div>
-<!-- </div> -->
-<!-- 
-<article>
-  <img src="/assets/pages/index/Background 2160x1080.png" alt="The Lost Wanderer logo" />
-  <blockquote>“That twisted ride must have been from record breaking turbulence. As if you were warp speed in some wormhole whizzing around space from inside a jet plane. But then you suddenly crashed... and you don't remember where you were going or where you came. Looking around, you certainly don't know where you are.”</blockquote>
-  <p>The Lost Wanderer is a dramatic, atmospheric, exploration game where you must learn the fate of a strange world before escaping it.</p>
-  <a href="https://zendaogames.itch.io/the-lost-wanderer" role="button">PLAY FOR FREE</a>
-  <img src="/assets/pages/index/Capture.png" alt="The Lost Wanderer screenshot" />
-
-<div class="grid">
-  <div>
-    <img src="/assets/pages/index/Capture.png" alt="The Lost Wanderer screenshot" />
-  </div>
-  <div>
-    <img src="/assets/pages/index/Capture2.png" alt="The Lost Wanderer screenshot" />
-  </div>
-  <div>
-    <img src="/assets/pages/index/Capture3.png" alt="The Lost Wanderer screenshot" />
-  </div>
-</div>
-</article> -->
 
     </main>
 
     <footer>
-      &copy; to me
+      <p class="has-text-centered has-text-light">
+        &copy; 2020-2023 Zen Dao Games 
+      </p>
     </footer>
+
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+
   </body>
 </html>

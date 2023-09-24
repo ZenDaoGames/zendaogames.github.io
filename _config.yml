@@ -10,3 +10,8 @@ defaults:
       path: "" # an empty string here means all files in the project
     values:
       layout: "default"
+      twitter-url: https://twitter.com/ZenDaoGames
+      facebook-url: https://www.facebook.com/ZenDaoGames
+      mastodon-url: https://mastodon.gamedev.place/@zendaogames
+      email-url: mailto:zendaogames@gmail.com
+      feed-url: https://feeds.feedburner.com/ZenDaoGames-Blog

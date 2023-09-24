@@ -10,17 +10,62 @@
     <link rel="icon" type="image/x-icon" href="/assets/images/favicon.ico">
     <title>{{ page.title }}</title>
   </head>
-  <body>
+  <body class="has-navbar-fixed-top">
 
-    <nav>
-      <ul>
-        <li><strong>Brand</strong></li>
-      </ul>
-      <ul>
-        <li><a href="#">Home</a></li>
-        <li><a href="#">Blog</a></li>
-        <li><a href="#">About</a></li>
-      </ul>
+    <nav class="navbar is-fixed-top" role="navigation" aria-label="main navigation">
+      <div class="navbar-brand">
+        <a class="navbar-item" href="{% link index.html %}">
+          <img src="/assets/images/logo 400x400.png" width="28" height="28">
+        </a>
+
+        <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false" data-target="navbarBasicExample">
+          <span aria-hidden="true"></span>
+          <span aria-hidden="true"></span>
+          <span aria-hidden="true"></span>
+        </a>
+      </div>
+
+      <div class="navbar-menu">
+        <div class="navbar-start">
+        </div>
+
+        <div class="navbar-end">
+          <a class="navbar-item" href="{% link index.html %}">
+            Home
+          </a>
+
+          <a class="navbar-item" href="{% link about.html %}">
+            About
+          </a>
+
+          <a class="navbar-item" href="{% link blog.html %}">
+            Blog
+          </a>
+
+          <a class="navbar-item" href="{{ page.twitter-url }}" target="_blank" rel="noopener noreferrer">
+            <span class="icon">
+              <ion-icon name="logo-twitter"></ion-icon>
+            </span>
+          </a>
+
+          <a class="navbar-item" href="{{ page.facebook-url }}" target="_blank" rel="noopener noreferrer">
+            <ion-icon name="logo-facebook"></ion-icon>
+          </a>
+
+          <a class="navbar-item" href="{{ page.mastodon-url }}" target="_blank" rel="noopener noreferrer">
+            <ion-icon name="logo-mastodon"></ion-icon>
+          </a>
+
+          <a class="navbar-item" href="{{ page.email-url }}" target="_blank" rel="noopener noreferrer">
+            <ion-icon name="mail-outline"></ion-icon>
+          </a>
+
+          <a class="navbar-item" href="{{ page.feed-url }}" target="_blank" rel="noopener noreferrer">
+            <ion-icon name="logo-rss"></ion-icon>
+          </a>
+
+        </div>
+      </div>
     </nav>
 
     <main>
@@ -28,7 +73,13 @@
     </main>
 
     <footer>
-      &copy; to me
+      <p class="has-text-centered has-text-light">
+        &copy; 2020-{{ site.time | date: '%Y' }} Zen Dao Games 
+      </p>
     </footer>
+
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+
   </body>
 </html>
