@@ -1,2 +1,2 @@
-source              : ./root
-destination         : ./_site
+source              : ./src
+destination         : ./out  
