@@ -1,0 +1,21 @@
+version: "3"
+services:
+  jekyll:
+    build: .
+    command: 
+      - jekyll
+      - serve
+      - --watch  # Enable auto-regeneration of the site when files are modified.
+      - --force_polling  # Force watch to use polling
+      - --drafts  # Process and render draft posts
+      - --unpublished  # Render posts that were marked as unpublished
+      - --future  # Publish posts or collection documents with a future date
+      - --verbose # Print verbose output
+      - --trace  # Show the full backtrace when an error occurs
+      - --strict_front_matter  # Cause a build to fail if there is a YAML syntax error in a page's front matter
+      #- --source root
+      #- --destination /tmp/_site  # Change the directory where Jekyll will write files
+    ports:
+      - 4000:4000
+    volumes:
+      - .:/srv/jekyll
