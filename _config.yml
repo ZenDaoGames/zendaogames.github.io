@@ -1,2 +1,12 @@
+host: 0.0.0.0
+port: 4000
 source              : ./src
-destination         : ./out  
+destination         : ./out
+theme : null
+
+defaults:
+  -
+    scope:
+      path: "" # an empty string here means all files in the project
+    values:
+      layout: "default"

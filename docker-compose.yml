@@ -1,10 +1,12 @@
 version: "3"
 services:
   jekyll:
-    build: .
+    build: ./
     command: 
       - jekyll
       - serve
+      # - --host localhost
+      # - --port 4000
       - --watch  # Enable auto-regeneration of the site when files are modified.
       - --force_polling  # Force watch to use polling
       - --drafts  # Process and render draft posts
