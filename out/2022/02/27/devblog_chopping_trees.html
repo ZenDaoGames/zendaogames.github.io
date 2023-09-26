@@ -1,0 +1,176 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
+    <!-- <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@picocss/pico@1/css/pico.min.css"> -->
+    <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/flexboxgrid/6.3.1/flexboxgrid.min.css" integrity="sha512-YHuwZabI2zi0k7c9vtg8dK/63QB0hLvD4thw44dFo/TfBFVVQOqEG9WpviaEpbyvgOIYLXF1n7xDUfU3GDs0sw==" crossorigin="anonymous" referrerpolicy="no-referrer" /> -->
+    <link rel="stylesheet" href="/assets/css/styles.css">
+    <link rel="icon" type="image/x-icon" href="/assets/images/favicon.ico">
+    <title>/devblog/ Chopping Trees</title>
+  </head>
+  <body class="has-navbar-fixed-top">
+
+    <nav class="navbar is-fixed-top" role="navigation" aria-label="main navigation">
+      <div class="navbar-brand">
+        <a class="navbar-item" href="/">
+          <img src="/assets/images/logo 400x400.png" width="28" height="28">
+        </a>
+
+        <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false" data-target="Options">
+          <span aria-hidden="true"></span>
+          <span aria-hidden="true"></span>
+          <span aria-hidden="true"></span>
+        </a>
+      </div>
+
+      <div class="navbar-menu" id="Options">
+        <div class="navbar-start">
+        </div>
+
+        <div class="navbar-end">
+          <a class="navbar-item" href="/">
+            Home
+          </a>
+
+          <a class="navbar-item" href="/about.html">
+            About
+          </a>
+
+          <a class="navbar-item" href="/blog.html">
+            Blog
+          </a>
+
+          <a class="navbar-item" href="https://twitter.com/ZenDaoGames" target="_blank" rel="noopener noreferrer">
+            <span class="icon">
+              <ion-icon name="logo-twitter"></ion-icon>
+            </span>
+          </a>
+
+          <a class="navbar-item" href="https://www.facebook.com/ZenDaoGames" target="_blank" rel="noopener noreferrer">
+            <ion-icon name="logo-facebook"></ion-icon>
+          </a>
+
+          <a class="navbar-item" href="https://mastodon.gamedev.place/@zendaogames" target="_blank" rel="noopener noreferrer">
+            <ion-icon name="logo-mastodon"></ion-icon>
+          </a>
+
+          <a class="navbar-item" href="mailto:zendaogames@gmail.com" target="_blank" rel="noopener noreferrer">
+            <ion-icon name="mail-outline"></ion-icon>
+          </a>
+
+          <a class="navbar-item" href="https://feeds.feedburner.com/ZenDaoGames-Blog" target="_blank" rel="noopener noreferrer">
+            <ion-icon name="logo-rss"></ion-icon>
+          </a>
+
+        </div>
+      </div>
+    </nav>
+
+    <main>
+      <p>2022-02-27 00:00:00 +0000 - Written by </p>
+
+<p>This week I focused on making decent “tree chopping” for my game- about 13 hours total working on this single feature. I think Valheim has an incredible experience for this, so there’s a lot of inspiration being pulled from there. Of course, it’s my own thing- too!</p>
+
+<blockquote class="twitter-tweet" data-theme="dark"><p lang="en" dir="ltr">Just some looting, equipping, and chopping! <a href="https://twitter.com/hashtag/ScreenshotSaturday?src=hash&amp;ref_src=twsrc%5Etfw">#ScreenshotSaturday</a>!<a href="https://twitter.com/hashtag/indiegamedev?src=hash&amp;ref_src=twsrc%5Etfw">#indiegamedev</a> <a href="https://twitter.com/hashtag/madewithunity?src=hash&amp;ref_src=twsrc%5Etfw">#madewithunity</a> <a href="https://twitter.com/hashtag/Unity?src=hash&amp;ref_src=twsrc%5Etfw">#Unity</a> <a href="https://t.co/NK4RFM7PUh">pic.twitter.com/NK4RFM7PUh</a></p>&mdash; Zen Dao Games (@ZenDaoGames) <a href="https://twitter.com/ZenDaoGames/status/1497797782396018688?ref_src=twsrc%5Etfw">February 27, 2022</a></blockquote>
+<script async="" src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+
+<h4 id="prototype">Prototype</h4>
+
+<p>The prototype actually came together fairly quick, a couple of hours at most. This was just a cylinder that would fall over when they “died”- but it was a great motivator to keep moving forward. These small milestones are important for me, otherwise I may lose interest because I’m stuck in a rabbit hole without tangible progress to show for it.</p>
+
+<p>I was able to reuse the health system for characters (from Opsive’s UCC), which was awesome. Attacks from weapons (and eventually, tools) worked, health dropped, and an event for OnDeath fired without any special effort on my part. All I needed was a custom script to handle the OnDeath event to disable isKinematic on the RigidBody, give it a slight nudge in the direction of the attack, and watch it fall using the glory of physics. Honestly, this felt so good I spent a bit of time just chopping down cylinders and watching them fall over. TIMBER!</p>
+
+<p>Sidebar: I need to get better at getting screenshots and recordings during development, otherwise I’d have some sweet “in progress” material for you to see.</p>
+
+<h4 id="iteration">Iteration</h4>
+
+<p>After the prototype, it was time to iterate until it was good enough to move on to something else. I had no idea what this meant when I started iterating, but as I made changes I would update my “todo” list with ideas until it finally felt good enough.</p>
+
+<p><img src="/assets/posts/2022-02-27-devblog_chopping_trees/Chop+down+trees+for+wood.png" alt="Chopping trees todo list" title="Chopping trees todo list" /></p>
+
+<p><em>Chopping trees todo list.</em></p>
+
+<p>Each of these steps took time and iteration on their own. Some of them came together surprisingly quickly, like creating Particle System FX for foliage falling when the tree is chopped down. I thought this would be hard, but a simple cone shape that bursts the leafy material looked great. I just needed a few tweaks to gravity, collision, and size. Done!</p>
+
+<p>Being able to reuse existing systems saved a lot of time, again. Opsive’s UCC offers a Surface Manager for generating sounds, effects, and decals based on impact definitions. I was able to create surface types (wood, grass, dirt) and impact definitions (GiantLand). Joining these two together (GiantLandOnDirt, GiantLandOnGrass, etc…) meant the system would automatically play whatever effects I configured when the collisions happened.</p>
+
+<p>Except… This Surface Manager expects a RaycastHit object when all I had was Collision. Eventually I teased out some code that calls Physics.RaycastNonAlloc during the collision event to capture the RaycastHit and pass it along. There’s a lot of nuance here I’m skipping over, and working this out took 2-3 hours itself. If you are interested in more details, reach out to me on Twitter.</p>
+
+<h4 id="the-biggest-challenge">The Biggest Challenge</h4>
+
+<p>While there were several challenges in getting this feature where it was “good enough”- the one that sticks with me was tuning the collisions to make sense.</p>
+
+<p>Originally, collisions checked to see if what it hit had health. If so, it would do some damage to it. This includes other trees as well, since they also have health. Trees falling can damage other trees, making them fall as well. The forest can be a scary place.</p>
+
+<p>DANGER TREES! (Absolutely inspired by Valheim).</p>
+
+<p>But now even if the player walked over a resting log, they would take damage. It needed nuance.</p>
+
+<p>The first thing I did was introduce force. Now, collisions would only cause damage if there was enough force to justify the damage. The simple calculation was:</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>velocity * mass = force
+</code></pre></div></div>
+
+<p>This worked well, until the player would push logs around on the ground and take damage from them. Pushing a log forward shouldn’t hurt you, right? Using the dot product of the direction of the log and the collision point’s normal helped here, along with a threshold for what would be considered inside the “danger zone” (configurable, of course).</p>
+
+<p>Now we had the nuance we needed:</p>
+
+<ul>
+  <li>Tree can be chopped down and turns into a log</li>
+  <li>The log can be chopped in half</li>
+  <li>The log halves can be chopped into “wood” material for crafting</li>
+  <li>Logs can hurt you, and anything else with health, if in the “danger zone” with enough force</li>
+  <li>Sounds play based on the materials that are impacted (wood, grass, dirt, etc…)</li>
+  <li>Particle effects make it feel good</li>
+</ul>
+
+<p>Is it perfect? NOPE!</p>
+
+<p>Is it “good enough” to call done so that I can move on to the next feature? YUP!</p>
+
+<p>Thanks for reading.</p>
+
+WOWZASSSSS
+WOWZASSSSS
+WOWZASSSSS
+WOWZASSSSS
+    </main>
+
+    <footer class="footer">
+      <div class="content has-text-centered has-text-light">
+        <p>
+          &copy; 2020-2023 Zen Dao Games 
+        </p>
+      </div>
+    </footer>
+
+
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+
+    <script>
+      document.addEventListener('DOMContentLoaded', () => {
+        // Get all "navbar-burger" elements
+        const $navbarBurgers = Array.prototype.slice.call(document.querySelectorAll('.navbar-burger'), 0);
+
+        // Add a click event on each of them
+        $navbarBurgers.forEach( el => {
+          el.addEventListener('click', () => {
+
+            // Get the target from the "data-target" attribute
+            const target = el.dataset.target;
+            const $target = document.getElementById(target);
+
+            // Toggle the "is-active" class on both the "navbar-burger" and the "navbar-menu"
+            el.classList.toggle('is-active');
+            $target.classList.toggle('is-active');
+
+          });
+        });
+      });
+    </script>
+
+  </body>
+</html>

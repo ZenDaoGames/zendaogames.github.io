@@ -1,3 +1,30 @@
+/***********************
+GENERAL STYLES
+***********************/
+
+/*
+default background color
+*/
 body, footer {
   background-color: #0e0f4c !important;
+}
+
+
+/***********************
+STYLES FOR BLOG POSTS
+***********************/
+
+/*
+newline space in post paragraphs
+*/
+.post p {
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+/*
+rounded edge for images in post
+*/
+.post img {
+  border-radius: 2%;
 }

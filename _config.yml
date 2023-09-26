@@ -4,6 +4,9 @@ source              : ./src
 destination         : ./out
 theme : null
 
+# # kramdown:
+#   input: GFM
+
 defaults:
   -
     scope:
@@ -15,3 +18,9 @@ defaults:
       mastodon-url: https://mastodon.gamedev.place/@zendaogames
       email-url: mailto:zendaogames@gmail.com
       feed-url: https://feeds.feedburner.com/ZenDaoGames-Blog
+  -
+    scope:
+      path: "" # an empty string here means all files in the project
+      type: "posts"
+    values:
+      layout: "post"

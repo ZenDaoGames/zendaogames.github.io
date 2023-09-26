@@ -2,4 +2,24 @@
 title: Zen Dao Games - Blog
 ---
 
-Blog
+<div class="columns is-gapless m-6 is-centered">
+  <div class="column is-half has-text-light">
+
+  {% for post in site.posts %}
+  <!-- {{ post | inspect }} -->
+    <div class="post content">
+      <p class="is-size-7 has-text-grey ">
+        {{ post.date | date: '%Y-%m-%d' }}
+      </p>
+      <p class="is-size-4 has-text-weight-bold">
+        <a href="{{ post.url }}">{{ post.title }}</a>
+      </p>
+      <div class="is-size-6">
+        {{ post.content }}
+      </div>
+    </div>
+  {% endfor %}
+
+  </div>
+</div>
+
